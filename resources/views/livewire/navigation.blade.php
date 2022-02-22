@@ -48,7 +48,7 @@
                             aria-current="page">Dashboard</a> --}}
 
                         @foreach ($categories as $category)
-                        <a href="#"
+                        <a href="{{route('posts.category', $category)}}"
                             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{($category->name)}}</a>
                         @endforeach
 
@@ -76,7 +76,7 @@
                         <button x-on:click="open=true" type="button"
                             class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                             id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                            {{-- <span class="sr-only">Open user menu</span> --}}
+                            <span class="sr-only">Open user menu</span>
                             <img class="h-8 w-8 rounded-full" src="{{auth()->user()->profile_photo_url}}" alt="">
                         </button>
                     </div>
@@ -120,7 +120,7 @@
 
             @foreach ($categories as $category)
 
-            <a href="#"
+            <a href="{{route('posts.category', $category)}}"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{$category->name}}</a>
             @endforeach
         </div>
